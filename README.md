@@ -1,2 +1,2 @@
 # trabajo-de-prueba
-con esto miro mi desempeño
+presento mi trabajo para poder optar a la plza de trabajo este consiste en poder administrar datos sobre vehiculos , ya dicho esto para poder correr el programa se necesota una cosa abrir el codigo de nodejs y mysql ya que si falta uno la aplicacion no podra correr , en cada carpeta esta definido las funciones , y para ver si hace su cometido debe ingresar al "localhost:3000" en esta direccion podra poner aprueba todo lo anterior  y de antemano les agradezco esta oportunidad
