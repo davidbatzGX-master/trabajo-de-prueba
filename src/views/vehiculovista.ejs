@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehiculo Nodejs</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+       <a href="/" class="navbar-brand">CRUD Vehiculo</a> 
+    </nav>
+
+    <div class="container">
+        <div class="row mt-5" >
+            <div class="col-md-7">
+                <table class="table table-bordered table-hower">
+                    <thead>
+                        <tr>
+                            <th>n°</th>
+                            <th>marca</th>
+                            <th>modelo</th>
+                            <th>año</th>
+                            <th>placa</th>
+                            <th>estado</th>
+                            <th>Acciones</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <% if (data) {%>
+                        <% for(var i = 0; i< data.length; i++) {%>
+                            <tr>
+                                <td> <%= (i + 1) %> </td>
+                                <td> <%= data[i].marca%> </td>
+                                <td> <%= data[i].modelo%> </td>
+                                <td> <%= data[i].año%> </td>
+                                <td> <%= data[i].placa%> </td>
+                                <td> <%= data[i].estado%> </td>
+                                <td>
+                                    <a href="/delete/<%= data[i].id%>" class="btn btn-danger">eliminar</a>
+                                    <a href="/update/<%= data[i].id%>" class="btn btn-info">editar</a>
+                                </td>
+                                
+                            </tr>
+                        <% } %>
+                       <% }%> 
+                    </tbody>
+
+                </table>
+                
+                
+            </div>
+            <div class="col-md-5">
+               <div class="card">
+                   <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="marca" placeholder="marca" class="form-cotrol">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="modelo" placeholder="modelo" class="form-cotrol">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="año" placeholder="año" class="form-cotrol">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="placa" placeholder="placa" class="form-cotrol">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="estado" placeholder="estado" class="form-cotrol">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            guardar carro
+                        </button>
+                    </form>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
